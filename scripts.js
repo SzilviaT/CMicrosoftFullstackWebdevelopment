@@ -3,18 +3,18 @@ const darkModeButton = document.getElementById('dark-mode-toggle');
 if (darkModeButton) {
   const body = document.body;
 
-  const applyMode = (darkMode) => {
-    body.classList.toggle('dark-mode', darkMode);
-    darkModeButton.textContent = darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode';
-    localStorage.setItem('darkModeEnabled', darkMode ? 'true' : 'false');
+  const applyMode = (lightMode) => {
+    body.classList.toggle('light-mode', lightMode);
+    darkModeButton.textContent = lightMode ? 'Switch to Dark Mode' : 'Switch to Light Mode';
+    localStorage.setItem('lightModeEnabled', lightMode ? 'true' : 'false');
   };
 
-  const savedMode = localStorage.getItem('darkModeEnabled');
-  const initialDarkMode = savedMode === 'true';
-  applyMode(initialDarkMode);
+  const savedMode = localStorage.getItem('lightModeEnabled');
+  const initialLightMode = savedMode === 'true';
+  applyMode(initialLightMode);
 
   darkModeButton.addEventListener('click', () => {
-    const isDark = body.classList.toggle('dark-mode');
-    applyMode(isDark);
+    const isLight = !body.classList.contains('light-mode');
+    applyMode(isLight);
   });
 }

@@ -4,39 +4,103 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
-  <title>Basic HTML Page</title>
-  <style>
-    body.dark-mode {
-      background-color: #121212;
-      color: #f5f5f5;
-    }
-    body.dark-mode header,
-    body.dark-mode footer {
-      background-color: #1e1e1e;
-    }
-    #darkModeToggle {
-      margin-top: 1rem;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-    }
-  </style>
+  <title>Portfolio Website</title>
 </head>
 <body>
-  <header>
-    <h1>Welcome to My Basic HTML Page</h1>
-    <button id="darkModeToggle" type="button">Toggle Dark Mode</button>
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="#home">CMicrosoft</a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
+
   <main>
-    <p>This is a simple HTML page created as a starting template.</p>
+    <section class="hero" id="home">
+      <div class="container">
+        <h1>Hi, I'm Szilvia</h1>
+        <p>Welcome to my portfolio website. I build responsive web pages using HTML, CSS, and JavaScript for modern front-end experiences.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#projects">View My Work</a>
+          <button id="dark-mode-toggle" class="btn" type="button">Switch to Light Mode</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="container">
+        <div>
+          <h2>About Me</h2>
+          <p class="about-text">I create clean, accessible websites with modern layouts, responsive design, and interactive features powered by JavaScript.</p>
+          <ul class="skill-list" aria-label="Skills">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>Responsive Design</li>
+          </ul>
+        </div>
+        <div class="profile-card">
+          <img class="profile-image" src="https://via.placeholder.com/360" alt="Portrait illustration of the portfolio developer">
+          <h3>Portfolio Details</h3>
+          <ul class="profile-list">
+            <li><span>Role</span><span>Front-End Developer</span></li>
+            <li><span>Location</span><span>Remote</span></li>
+            <li><span>Experience</span><span>Entry Level</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section projects" id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Featured Projects</h2>
+          <p>These examples show how I use HTML structure, CSS styling, and JavaScript interaction together.</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <h3>Portfolio Landing Page</h3>
+            <p>A responsive portfolio homepage with navigation, hero section, and featured project cards.</p>
+          </article>
+          <article class="card">
+            <h3>Interactive Theme Toggle</h3>
+            <p>A JavaScript-powered light/dark mode button that remembers the chosen theme in local storage.</p>
+          </article>
+          <article class="card">
+            <h3>Accessible Layout</h3>
+            <p>Semantic HTML combined with accessible navigation and image alt text.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Contact</h2>
+          <p>Reach out if you'd like to review my portfolio or collaborate on a project.</p>
+        </div>
+        <form class="contact-form" aria-label="Contact form">
+          <input type="text" placeholder="Your name" aria-label="Your name">
+          <input type="email" placeholder="Your email" aria-label="Your email">
+          <textarea placeholder="Your message" aria-label="Your message"></textarea>
+          <button class="btn" type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
   </main>
-  <footer>
-    <p>&copy; 2026 Basic HTML Page</p>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 CMicrosoft Portfolio</p>
+    </div>
   </footer>
-  <script>
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    darkModeToggle.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-    });
-  </script>
+
+  <script src="scripts.js"></script>
 </body>
 </html>
